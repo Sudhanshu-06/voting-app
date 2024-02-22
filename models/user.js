@@ -27,12 +27,16 @@ const userSchema = new mongoose.Schema({
     },
     password:{
         type:String,
+        required:true
+    },
+    role:{
+        type:String,
         enum:['voter','admin'],
         default:'voter'
     },
     isVoted:{
         type:Boolean,
-        default: false
+        default:false
     }
 });
 
